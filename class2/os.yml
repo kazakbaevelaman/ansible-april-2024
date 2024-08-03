@@ -1,0 +1,9 @@
+- hosts: all
+  become: true
+  tasks:
+  - debug: msg="OS is {{ ansible_distribution }}"
+
+  - name: Install apache
+    include: "{{ ansible_distribution }}.yml"
+
+
